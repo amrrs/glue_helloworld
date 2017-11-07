@@ -1,0 +1,25 @@
+---
+title: "Glue - Hello World"
+output: md_document
+---
+
+Just checking out this R-package `glue` that I haven't come across before. 
+
+
+```{r results='hide',message=FALSE,warning=FALSE}
+library(glue)
+library(magrittr)
+
+df <- mtcars
+```
+
+```{r}
+glue('This dataset has {nrow(df)} rows and {ncol(df)} columns')
+```
+
+
+```{r}
+mtcars %>% glue_data("{rownames(.)} has {cyl} cylinders and {hp} hp")
+```    
+
+
